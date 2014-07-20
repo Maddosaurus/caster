@@ -29,7 +29,6 @@ public class Owm implements Connector {
                 });
 
         GenericUrl target = new GenericUrl("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric");
-        System.out.println(target.toString());
         HttpRequest request = requestFactory.buildGetRequest(target);
         return parseResponse(request.execute());
     }
@@ -39,8 +38,7 @@ public class Owm implements Connector {
 
         if(response == null) {
             System.out.println("Received malformed HTTP response");
-            ret = new WeatherCity();
-            return ret.setError("Received malformed HTTP response");
+            return null;
         }
         CityAnswer city = response.parseAs(CityAnswer.class);
 

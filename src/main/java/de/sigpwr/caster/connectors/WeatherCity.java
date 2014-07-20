@@ -16,7 +16,6 @@ public class WeatherCity {
     String weatherDesc;
     Date sunrise;
     Date sunset;
-    String error;
 
     public WeatherCity() {
     }
@@ -28,6 +27,18 @@ public class WeatherCity {
         this.temp_max = temp_max;
         this.threeHour = threeHour;
         this.weatherDesc = weatherDesc;
+    }
+
+    @Override
+    public String toString() {
+        return "City:\t\t\t\t" + city + "\n" +
+                "Temperature:\t\t" + temp + "°C" + "\n" +
+                "Temperature Min:\t" + temp_min + "°C" + "\n" +
+                "Temperature Max:\t" + temp_max + "°C" + "\n" +
+                "Next 3 Hours:\t\t" + threeHour + "mm of rain and snow" + "\n" +
+                "Weather:\t\t\t" + weatherDesc + "\n" +
+                "Sunrise:\t\t\t" + sunrise + "\n" +
+                "Sunset:\t\t\t\t" + sunset + "\n";
     }
 
     public String getCity() {
@@ -76,15 +87,6 @@ public class WeatherCity {
 
     public void setWeatherDesc(String weatherDesc) {
         this.weatherDesc = weatherDesc;
-    }
-
-    public String getError() {
-        return error;
-    }
-
-    public WeatherCity setError(String error) {
-        this.error = error;
-        return this;
     }
 
     public Date getSunrise() {
