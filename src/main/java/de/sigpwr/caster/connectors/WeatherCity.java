@@ -18,6 +18,7 @@ public class WeatherCity {
     Date sunset;
 
     public WeatherCity() {
+        this.threeHour = -1;
     }
 
     public WeatherCity(String city, float temp, float temp_min, float temp_max, float threeHour, String weatherDesc) {

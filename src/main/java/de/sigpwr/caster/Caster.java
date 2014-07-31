@@ -4,6 +4,7 @@ import de.sigpwr.caster.connectors.DeutscherWD.WarningEntry;
 import de.sigpwr.caster.connectors.Dwd;
 import de.sigpwr.caster.connectors.Owm;
 import de.sigpwr.caster.connectors.WeatherCity;
+import de.sigpwr.caster.connectors.Yw;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,8 +21,20 @@ public class Caster {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         if(city != null){
+            System.out.println("OWM:");
+            System.out.println(city.toString());
+        }
+
+        city = null;
+        Yw yw = new Yw();
+        try {
+            city =yw.getData("645458");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(city != null){
+            System.out.println("YW (using weather.com):");
             System.out.println(city.toString());
         }
 
@@ -32,10 +45,13 @@ public class Caster {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        System.out.println(d.getNumberOfWarnings()+"\n");
-        if(warningEntryList!=null)
-            for(WarningEntry w : warningEntryList)
-                System.out.println(w.toString());
+        System.out.print("DWD:" + " ");
+        System.out.println(d.getNumberOfWarnings());
+        if(warningEntryList!=null && warningEntryList.size()>0) {
+            for (WarningEntry w : warningEntryList)
+                System.out.println("\t" + w.toString());
+        }
+        else
+            System.out.println("\t"+d.getEntryText());
     }
 }

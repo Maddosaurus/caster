@@ -15,10 +15,14 @@ import java.util.List;
  */
 public class Dwd {
     String warningNumber;
+    String entryText;
 
     //Set in getWarnings - to be called AFTER getWarnings()!
     public String getNumberOfWarnings() {
         return warningNumber;
+    }
+    public String getEntryText() {
+        return entryText;
     }
 
     public List<WarningEntry> getWarnings(String city) throws IOException {
@@ -26,6 +30,7 @@ public class Dwd {
         Elements entries = doc.select(".app_ws_warning_content_text");
 
         warningNumber = doc.select(".app_ws_headline").first().text();
+        entryText = doc.select(".app_ws_content_text").first().text();
 
         WarningEntry w;
         List<WarningEntry> warningEntries = new LinkedList<>();
