@@ -12,6 +12,8 @@ import java.util.*;
 
 /**
  * Created by Shivy on 31.07.2014.
+ *
+ * Three hour is not used as yahoo delivers no data!
  */
 public class Yw implements Connector {
     @Override

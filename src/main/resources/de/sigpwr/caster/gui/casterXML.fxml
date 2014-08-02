@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.sigpwr.caster.gui.Controller">
+   <children>
+      <AnchorPane prefHeight="428.0" prefWidth="423.0">
+         <children>
+            <TabPane prefHeight="430.0" prefWidth="420.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Current Weather">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="tempCurrent" layoutX="269.0" layoutY="18.0" text="20°C" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="55.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="tempMax" layoutX="338.0" layoutY="86.0" text="25°C" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="tempMin" layoutX="257.0" layoutY="86.0" text="10°C" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="119.0" layoutY="325.0" text="3 hours precipitation" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="next3Hours" layoutX="165.0" layoutY="287.0" text="100mm " textAlignment="CENTER">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="city" layoutX="29.0" layoutY="29.0" text="Dortmund">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="currentCondition" layoutX="29.0" layoutY="90.0" text="Partly clouds">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="58.0" layoutY="185.0" text="Sunrise">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="277.0" layoutY="185.0" text="Sunset">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="sunrise" layoutX="60.0" layoutY="215.0" text="06:44" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="sunset" layoutX="276.0" layoutY="215.0" text="18:24" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="361.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleRefresh" opacity="0.73" text="Refresh" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Warnings">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextArea fx:id="areaWarning" editable="false" layoutX="12.0" layoutY="14.0" prefHeight="342.0" prefWidth="405.0" wrapText="true" />
+                              <Button layoutX="361.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleRefresh" text="Refresh" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

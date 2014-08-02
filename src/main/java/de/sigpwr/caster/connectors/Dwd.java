@@ -30,7 +30,8 @@ public class Dwd {
         Elements entries = doc.select(".app_ws_warning_content_text");
 
         warningNumber = doc.select(".app_ws_headline").first().text();
-        entryText = doc.select(".app_ws_content_text").first().text();
+        if(doc.select(".app_ws_content_text").size()<0)
+            entryText = doc.select(".app_ws_content_text").first().text();
 
         WarningEntry w;
         List<WarningEntry> warningEntries = new LinkedList<>();

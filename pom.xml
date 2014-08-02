@@ -9,17 +9,22 @@
     <version>0.1-SNAPSHOT</version>
 
     <dependencies>
-    <dependency>
-        <!-- jsoup HTML parser library @ http://jsoup.org/ -->
-        <groupId>org.jsoup</groupId>
-        <artifactId>jsoup</artifactId>
-        <version>LATEST</version>
-    </dependency>
-    <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client</artifactId>
-        <version>1.18.0-rc</version>
-    </dependency>
+        <dependency>
+            <groupId>org.aerofx</groupId>
+            <artifactId>aerofx</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <!-- jsoup HTML parser library @ http://jsoup.org/ -->
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client</artifactId>
+            <version>1.18.0-rc</version>
+        </dependency>
         <dependency>
             <groupId>com.google.http-client</groupId>
             <artifactId>google-http-client-jackson2</artifactId>
